@@ -27,6 +27,6 @@ Inside this python package's main directory, run:
 
 TODO:
 
--   How to use CLI
+-   How to use the CLI
 -   How to create a single Node-RED container
 -   How to create multiple Node-RED containers for a specified amount of users

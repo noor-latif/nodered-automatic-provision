@@ -16,7 +16,7 @@ services:
       - node-red-net
     volumes:
       - type: bind
-        source: /home/noor/nodered/elever/{elev}
+        source: $HOME/nodered/elever/{elev}
         target: /data
 
 volumes:

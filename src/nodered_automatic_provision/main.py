@@ -11,16 +11,22 @@ class Provision:
         self.password = ''
         self.users = {}
 
-    def set_dict_key_value(self, key: str, value):
+    def set_users_dict(self, key: str, value):
         """Set a key-value pair to the dictionary"""
         self.users[key] = value
 
-    def load_users(self, device_schema):
-        """Load the device schema json file into dictionary"""
-        encoded_json = device_schema.encode('utf-8')
-        with open(encoded_json, 'r', encoding='utf-8') as schema_file:
-            self.device_data = json.load(schema_file)
-        return self.device_data
+    def load_users(self, users):
+        """Load a list of users into a dictionary"""
+        with open(users.encode('utf-8'), 'r', encoding='utf-8') as users_list:
+            self.users = json.load(users_list)
+
+    def get_users(self):
+        """Return the dictionary of users"""
+        return self.users
+
+    def get_password(self):
+        """Return the password"""
+        return self.password
 
 def main():
     print("Automatic Node-RED provisioning")
